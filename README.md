@@ -259,7 +259,7 @@ Press SAVE → workout saved with all splits!
 ---
 
 ## 📂 Project Structure
-
+```
 app/src/main/
 ├── java/com/example/swimmingpaceclock/
 │   ├── MainActivity.java
@@ -293,7 +293,7 @@ app/src/main/
     └── values/
         └── strings.xml
             — App name
-
+```
 
 ---
 
