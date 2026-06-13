@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A">
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="12dp">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:text="Swimming Pace Clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#B5D4F4"/>
+
+            <Button
+                android:id="@+id/btnTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="🌙 Dark"
+                android:textSize="11sp"
+                android:backgroundTint="#1A3A5C"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="History"
+                android:textSize="11sp"
+                android:backgroundTint="#1A3A5C"/>
+
+        </LinearLayout>
+
+        <!-- Workout name and reps -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#112233"
+            android:padding="8dp"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvWorkoutLabel"
+                android:text="Workout: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B5D4F4"
+                android:textSize="13sp"/>
+
+            <EditText
+                android:id="@+id/etWorkoutName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="e.g. 4x100 Freestyle"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:backgroundTint="#378ADD"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvRepsLabel"
+                android:text="Reps:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B5D4F4"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/btnRepMinus"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:text="−"
+                android:textSize="16sp"
+                android:backgroundTint="#1A3A5C"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tvReps"
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnRepPlus"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:text="+"
+                android:textSize="16sp"
+                android:backgroundTint="#1A3A5C"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+
+        <!-- Rep counter -->
+        <TextView
+            android:id="@+id/tvRepCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rep: 0 / 4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#00FF88"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- CLOCK centered -->
+        <com.example.swimmingpaceclock.ClockView
+            android:id="@+id/clockView"
+            android:layout_width="310dp"
+            android:layout_height="310dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Elapsed time -->
+        <TextView
+            android:id="@+id/tvElapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:00"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"/>
+
+        <!-- Lap and pace -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/tvLapCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laps: 0"
+                android:textSize="17sp"
+                android:textColor="#B5D4F4"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/tvPace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pace: —"
+                android:textSize="17sp"
+                android:textColor="#9FE1CB"/>
+
+        </LinearLayout>
+
+        <!-- Interval and pool -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvIntervalLabel"
+                android:text="Interval:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#B5D4F4"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:text="−"
+                android:textSize="20sp"
+                android:backgroundTint="#1A3A5C"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tvInterval"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="120s"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="monospace"/>
+
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:text="+"
+                android:textSize="20sp"
+                android:backgroundTint="#1A3A5C"
+                android:padding="0dp"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:id="@+id/tvPoolLabel"
+                android:text="Pool:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#B5D4F4"
+                android:layout_marginEnd="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerPool"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+
+            <Button
+                android:id="@+id/btnFlashColor"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="🎨"
+                android:textSize="16sp"
+                android:backgroundTint="#1A3A5C"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="90dp"
+                android:layout_height="52dp"
+                android:text="START"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:backgroundTint="#185FA5"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnLap"
+                android:layout_width="90dp"
+                android:layout_height="52dp"
+                android:text="LAP"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0F6E56"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="90dp"
+                android:layout_height="52dp"
+                android:text="SAVE"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:backgroundTint="#6A0F8E"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="90dp"
+                android:layout_height="52dp"
+                android:text="RESET"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:backgroundTint="#A32D2D"/>
+
+        </LinearLayout>
+
+        <!-- Lap log -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/lapLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- Flash overlay FIXED at TOP -->
+    <View
+        android:id="@+id/flashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:background="#00FF88"
+        android:clickable="false"
+        android:visibility="gone"/>
+
+</RelativeLayout>
