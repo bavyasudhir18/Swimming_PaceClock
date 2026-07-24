@@ -22,9 +22,8 @@ No internet needed. No login needed. Just open and swim.
 
 The main interface of the Swimming Pace Clock. Users can configure workout details, number of repetitions, interval duration, pool length, and view the large analog pace clock designed for excellent visibility on the pool deck.
 
-<p align="center">
-  <img src="screenshots/home_screen.jpg" alt="Home Screen" width="280"/>
-</p>
+<img width="746" height="1600" alt="app_interface_screenshot1" src="https://github.com/user-attachments/assets/ff4d4bb2-1a14-4049-ae98-372c3c7e4c77" />
+
 
 ---
 
@@ -32,9 +31,9 @@ The main interface of the Swimming Pace Clock. Users can configure workout detai
 
 Displays the running pace clock during a workout with the current timer, repetition counter, lap recording, average pace calculation, and customizable interval timer. The interface is optimized for swimmers and coaches to monitor training sessions from a distance.
 
-<p align="center">
-  <img src="screenshots/workout_screen.jpg" alt="Workout Screen" width="280"/>
-</p>
+<img width="746" height="1600" alt="app_interface_screenshot2" src="https://github.com/user-attachments/assets/d82bb03c-6f36-4269-addc-6d9460ad60f7" />
+
+
 
 ---
 
@@ -42,9 +41,7 @@ Displays the running pace clock during a workout with the current timer, repetit
 
 Shows previously saved workouts, including workout names, date and time, lap times, intervals, and completed repetitions. All workout history is stored locally on the device and can be accessed without an internet connection.
 
-<p align="center">
-  <img src="screenshots/history_screen.jpg" alt="Workout History" width="280"/>
-</p>
+<img width="746" height="1600" alt="app_interface_screenshot3" src="https://github.com/user-attachments/assets/1429f006-2671-4326-a351-45fffb158d09" />
 
 ---
 ---
